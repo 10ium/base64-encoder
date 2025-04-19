@@ -21,8 +21,6 @@ https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/refs/heads/main/ou
 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/output/US.txt
 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/output/IR.txt
 https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/selector/random
-https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/output/converted.txt
-https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/selector/random
 https://raw.githubusercontent.com/Surfboardv2ray/v2ray-worker-sub/refs/heads/master/providers/ir
 https://raw.githubusercontent.com/ermaozi/get_subscribe/refs/heads/main/subscribe/v2ray.txt
 https://raw.githubusercontent.com/freedomnet25500/newyearsub/refs/heads/main/ss
