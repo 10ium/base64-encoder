@@ -78,14 +78,15 @@ jobs:
                   with open(os.path.join('encoded', fname), 'w') as f:
                       f.write(encoded)
                   if fname not in existing_files:
-                      links_to_add.append(f'[{fname}]({url})')
+                      links_to_add.append(f'[Encoded {fname}](/encoded/{fname})')
               except Exception as e:
                   with open(os.path.join('encoded', fname.replace('.txt', '_error.txt')), 'w') as f:
                       f.write(f'# Error fetching {url}: {e}\n')
 
-          # Update README
-          if links_to_add or links_to_remove:
-              with open('README.md', 'r') as readme_file:
+          # Check if README.md exists and update it
+          readme_path = 'README.md'
+          if os.path.exists(readme_path):
+              with open(readme_path, 'r') as readme_file:
                   readme_lines = readme_file.readlines()
 
               # Remove links that need to be deleted
@@ -96,8 +97,10 @@ jobs:
                   updated_readme.append('\n## Encoded Files\n')
                   updated_readme.extend([f'- {link}\n' for link in links_to_add])
 
-              with open('README.md', 'w') as readme_file:
+              with open(readme_path, 'w') as readme_file:
                   readme_file.writelines(updated_readme)
+          else:
+              print("README.md not found, skipping update.")
 
         shell: python
 
