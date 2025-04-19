@@ -22,7 +22,7 @@ jobs:
       - name: Install requirements
         run: pip install requests
 
-      - name: Sync and encode URLs
+      - name: Process sublist and update files
         run: |
           import os
           import requests
@@ -32,88 +32,60 @@ jobs:
 
           os.makedirs('encoded', exist_ok=True)
 
-          urls = []
-          filenames = []
-          links_to_add = []
-          links_to_remove = []
-
-          def get_unique_filename(name):
-              """Make sure the file name doesn't have duplicate .txt extension."""
-              if name.endswith('.txt.txt'):
-                  name = name[:-4]  # Remove extra .txt if present
-              return name
-
           with open('sublist.txt', 'r') as f:
               lines = [line.strip() for line in f if line.strip()]
+
+          filenames = []
+          links_to_add = []
 
           for line in lines:
               if '||' in line:
                   url, custom_name = map(str.strip, line.split('||', 1))
-                  filename = f'{custom_name}.txt'
+                  filename = custom_name if custom_name.endswith('.txt') else f'{custom_name}.txt'
               else:
-                  url = line.strip()
+                  url = line
                   parsed = urlparse(url)
-
                   if 'githubusercontent.com' in parsed.netloc:
                       match = re.search(r'githubusercontent\.com/([^/]+)/[^/]+/.+?/([^/]+)$', url)
                       if match:
                           user, file = match.groups()
-                          filename = f'{user}_{file}.txt'
+                          filename = f'{user}_{file}'
                       else:
-                          filename = f'github_unknown.txt'
+                          filename = 'github_unknown.txt'
                   else:
-                      filename = f'unnamed.txt'
+                      filename = 'unnamed.txt'
 
-              # Get the final unique filename, ensuring no double .txt
-              filename = get_unique_filename(filename)
-
-              urls.append(url)
+              filename = filename.replace('.txt.txt', '.txt')
               filenames.append(filename)
 
-          # Delete files not referenced
-          current_set = set(filenames)
-          existing_files = os.listdir('encoded')
-          for fname in existing_files:
-              if fname.endswith('.txt') and fname not in current_set:
-                  os.remove(os.path.join('encoded', fname))
-                  links_to_remove.append(fname)
-
-          # Fetch and encode
-          for url, fname in zip(urls, filenames):
               try:
                   r = requests.get(url, timeout=15)
                   r.raise_for_status()
                   encoded = base64.b64encode(r.content).decode('utf-8')
-                  with open(os.path.join('encoded', fname), 'w') as f:
-                      f.write(encoded)
-                  if fname not in existing_files:
-                      # Get the repository owner and repo name from the environment
-                      repo_owner = os.getenv('GITHUB_ACTOR')
-                      repo_name = os.getenv('GITHUB_REPOSITORY').split('/')[1]
-                      github_link = f'https://raw.githubusercontent.com/{repo_owner}/{repo_name}/main/encoded/{fname}'
-                      links_to_add.append(f'[base64 {fname}]({github_link})')
+                  with open(f'encoded/{filename}', 'w') as out:
+                      out.write(encoded)
               except Exception as e:
-                  with open(os.path.join('encoded', fname.replace('.txt', '_error.txt')), 'w') as f:
-                      f.write(f'# Error fetching {url}: {e}\n')
+                  with open(f'encoded/{filename.replace(".txt", "_error.txt")}', 'w') as err:
+                      err.write(f'# Error fetching {url}: {e}\n')
 
-          # Check if README.md exists and update it
-          readme_path = 'README.md'
-          if os.path.exists(readme_path):
-              with open(readme_path, 'r') as readme_file:
-                  readme_lines = readme_file.readlines()
+          # حذف فایل‌هایی که دیگه توی لیست نیستن
+          current_set = set(filenames)
+          for existing in os.listdir('encoded'):
+              if existing.endswith('.txt') and existing not in current_set:
+                  os.remove(os.path.join('encoded', existing))
 
-              # Remove links that need to be deleted
-              updated_readme = [line for line in readme_lines if not any(link in line for link in links_to_remove)]
+          # آپدیت README
+          readme_header = '## لینک اشتراک ساب‌های تبدیل شده\n'
+          repo_owner = os.getenv('GITHUB_ACTOR')
+          repo_name = os.getenv('GITHUB_REPOSITORY').split('/')[1]
 
-              # Add new links
-              if links_to_add:
-                  updated_readme.append('\n## لینک سابسکرایب تبدیل شده\n')
-                  updated_readme.extend([f'- {link}\n' for link in links_to_add])
+          new_lines = [readme_header]
+          for fname in sorted(filenames):
+              url = f'https://raw.githubusercontent.com/{repo_owner}/{repo_name}/main/encoded/{fname}'
+              new_lines.append(f'- [{fname}]({url})\n')
 
-              with open(readme_path, 'w') as readme_file:
-                  readme_file.writelines(updated_readme)
-          else:
-              print("README.md not found, skipping update.")
+          with open('README.md', 'w') as readme:
+              readme.writelines(new_lines)
 
         shell: python
 
@@ -121,6 +93,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A encoded/ README.md
+          git add -A
           git commit -m "Auto: update encoded files and README" || echo "Nothing to commit"
           git push
