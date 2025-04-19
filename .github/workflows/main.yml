@@ -1,4 +1,4 @@
-name: Encode Sublist
+name: Encode Sublist and Update README
 
 on:
   push:
@@ -34,6 +34,8 @@ jobs:
 
           urls = []
           filenames = []
+          links_to_add = []
+          links_to_remove = []
 
           with open('sublist.txt', 'r') as f:
               lines = [line.strip() for line in f if line.strip()]
@@ -61,9 +63,11 @@ jobs:
 
           # Delete files not referenced
           current_set = set(filenames)
-          for fname in os.listdir('encoded'):
+          existing_files = os.listdir('encoded')
+          for fname in existing_files:
               if fname.endswith('.txt') and fname not in current_set:
                   os.remove(os.path.join('encoded', fname))
+                  links_to_remove.append(fname)
 
           # Fetch and encode
           for url, fname in zip(urls, filenames):
@@ -73,16 +77,34 @@ jobs:
                   encoded = base64.b64encode(r.content).decode('utf-8')
                   with open(os.path.join('encoded', fname), 'w') as f:
                       f.write(encoded)
+                  if fname not in existing_files:
+                      links_to_add.append(f'[{fname}]({url})')
               except Exception as e:
                   with open(os.path.join('encoded', fname.replace('.txt', '_error.txt')), 'w') as f:
                       f.write(f'# Error fetching {url}: {e}\n')
 
+          # Update README
+          if links_to_add or links_to_remove:
+              with open('README.md', 'r') as readme_file:
+                  readme_lines = readme_file.readlines()
+
+              # Remove links that need to be deleted
+              updated_readme = [line for line in readme_lines if not any(link in line for link in links_to_remove)]
+
+              # Add new links
+              if links_to_add:
+                  updated_readme.append('\n## Encoded Files\n')
+                  updated_readme.extend([f'- {link}\n' for link in links_to_add])
+
+              with open('README.md', 'w') as readme_file:
+                  readme_file.writelines(updated_readme)
+
         shell: python
 
-      - name: Commit and push encoded files
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A encoded/
-          git commit -m "Auto: sync encoded base64 files with sublist.txt" || echo "Nothing to commit"
+          git add -A encoded/ README.md
+          git commit -m "Auto: update encoded files and README" || echo "Nothing to commit"
           git push
