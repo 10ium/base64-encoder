@@ -37,6 +37,12 @@ jobs:
           links_to_add = []
           links_to_remove = []
 
+          def get_unique_filename(name):
+              """Make sure the file name doesn't have duplicate .txt extension."""
+              if name.endswith('.txt.txt'):
+                  name = name[:-4]  # Remove extra .txt if present
+              return name
+
           with open('sublist.txt', 'r') as f:
               lines = [line.strip() for line in f if line.strip()]
 
@@ -57,6 +63,9 @@ jobs:
                           filename = f'github_unknown.txt'
                   else:
                       filename = f'unnamed.txt'
+
+              # Get the final unique filename, ensuring no double .txt
+              filename = get_unique_filename(filename)
 
               urls.append(url)
               filenames.append(filename)
