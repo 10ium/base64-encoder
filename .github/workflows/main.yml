@@ -91,7 +91,7 @@ jobs:
                       repo_owner = os.getenv('GITHUB_ACTOR')
                       repo_name = os.getenv('GITHUB_REPOSITORY').split('/')[1]
                       github_link = f'https://raw.githubusercontent.com/{repo_owner}/{repo_name}/main/encoded/{fname}'
-                      links_to_add.append(f'[Encoded {fname}]({github_link})')
+                      links_to_add.append(f'[base64 {fname}]({github_link})')
               except Exception as e:
                   with open(os.path.join('encoded', fname.replace('.txt', '_error.txt')), 'w') as f:
                       f.write(f'# Error fetching {url}: {e}\n')
@@ -107,7 +107,7 @@ jobs:
 
               # Add new links
               if links_to_add:
-                  updated_readme.append('\n## Encoded Files\n')
+                  updated_readme.append('\n## لینک سابسکرایب تبدیل شده\n')
                   updated_readme.extend([f'- {link}\n' for link in links_to_add])
 
               with open(readme_path, 'w') as readme_file:
