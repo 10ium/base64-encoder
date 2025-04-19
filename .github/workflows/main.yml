@@ -1,0 +1,88 @@
+name: Encode Sublist
+
+on:
+  push:
+    paths:
+      - sublist.txt
+  workflow_dispatch:
+
+jobs:
+  encode:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install requirements
+        run: pip install requests
+
+      - name: Sync and encode URLs
+        run: |
+          import os
+          import requests
+          import base64
+          from urllib.parse import urlparse
+          import re
+
+          os.makedirs('encoded', exist_ok=True)
+
+          urls = []
+          filenames = []
+
+          with open('sublist.txt', 'r') as f:
+              lines = [line.strip() for line in f if line.strip()]
+
+          for line in lines:
+              if '||' in line:
+                  url, custom_name = map(str.strip, line.split('||', 1))
+                  filename = f'{custom_name}.txt'
+              else:
+                  url = line.strip()
+                  parsed = urlparse(url)
+
+                  if 'githubusercontent.com' in parsed.netloc:
+                      match = re.search(r'githubusercontent\.com/([^/]+)/[^/]+/.+?/([^/]+)$', url)
+                      if match:
+                          user, file = match.groups()
+                          filename = f'{user}_{file}.txt'
+                      else:
+                          filename = f'github_unknown.txt'
+                  else:
+                      filename = f'unnamed.txt'
+
+              urls.append(url)
+              filenames.append(filename)
+
+          # Delete files not referenced
+          current_set = set(filenames)
+          for fname in os.listdir('encoded'):
+              if fname.endswith('.txt') and fname not in current_set:
+                  os.remove(os.path.join('encoded', fname))
+
+          # Fetch and encode
+          for url, fname in zip(urls, filenames):
+              try:
+                  r = requests.get(url, timeout=15)
+                  r.raise_for_status()
+                  encoded = base64.b64encode(r.content).decode('utf-8')
+                  with open(os.path.join('encoded', fname), 'w') as f:
+                      f.write(encoded)
+              except Exception as e:
+                  with open(os.path.join('encoded', fname.replace('.txt', '_error.txt')), 'w') as f:
+                      f.write(f'# Error fetching {url}: {e}\n')
+
+        shell: python
+
+      - name: Commit and push encoded files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A encoded/
+          git commit -m "Auto: sync encoded base64 files with sublist.txt" || echo "Nothing to commit"
+          git push
