@@ -46,3 +46,4 @@ https://raw.githubusercontent.com/theGreatPeter/v2rayNodes/refs/heads/main/nodes
 https://raw.githubusercontent.com/tristan-deng/v2rayNodesSelected/refs/heads/main/MyNodes.txt
 https://raw.githubusercontent.com/wudongdefeng/free/refs/heads/main/freevm/list_raw.txt
 https://robin.nscl.ir/ || robin.nscl.ir.txt
+https://raw.githubusercontent.com/hamedp-71/Trojan/refs/heads/main/hp.txt
