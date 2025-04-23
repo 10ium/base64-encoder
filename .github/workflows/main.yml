@@ -1,6 +1,8 @@
 name: Encode Sublist and Update README
 
 on:
+  schedule:
+    - cron: '0 3 * * *'
   push:
     paths:
       - sublist.txt
