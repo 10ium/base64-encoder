@@ -47,10 +47,10 @@ https://raw.githubusercontent.com/tristan-deng/v2rayNodesSelected/refs/heads/mai
 https://raw.githubusercontent.com/wudongdefeng/free/refs/heads/main/freevm/list_raw.txt
 https://robin.nscl.ir/ || robin.nscl.ir.txt
 https://raw.githubusercontent.com/hamedp-71/Trojan/refs/heads/main/hp.txt
-https://raw.githubusercontent.com/ShadowSocksM/V2ray/refs/heads/main/ShadowM-MCI-Irancell.txt
-https://raw.githubusercontent.com/ShadowSocksM/V2ray/refs/heads/main/ShadowsocksM-MCI-Wifi.txt
-https://raw.githubusercontent.com/ShadowSocksM/V2ray/refs/heads/main/ShadowSocksM-MR.txt
-https://raw.githubusercontent.com/ShadowSocksM/V2ray/refs/heads/main/ShadowSocksM-Singbox.txt
+https://raw.githubusercontent.com/ShadowSocksM/V2ray/refs/heads/main/ShadowM-MCI-Irancell.txt || ShadowM-MCI-Irancell.txt
+https://raw.githubusercontent.com/ShadowSocksM/V2ray/refs/heads/main/ShadowsocksM-MCI-Wifi.txt || ShadowsocksM-MCI-Wifi.txt
+https://raw.githubusercontent.com/ShadowSocksM/V2ray/refs/heads/main/ShadowSocksM-MR.txt || ShadowSocksM-MR.txt
+https://raw.githubusercontent.com/ShadowSocksM/V2ray/refs/heads/main/ShadowSocksM-Singbox.txt || ShadowSocksM-Singbox.txt
 https://karing-freevpnhomes-subscription.shampoosirsehat.homes || freevpnhomes.txt
 https://shz.al/pTD5 || @proxy_kafee.txt
 https://shz.al/rKMx || @v2ray_hidify.txt
