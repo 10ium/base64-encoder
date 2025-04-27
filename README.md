@@ -1,4 +1,5 @@
 ## لینک اشتراک ساب‌های تبدیل شده
+- [10ium_proxy_configs.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/10ium_proxy_configs.txt)
 - [10ium_ss_iran.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/10ium_ss_iran.txt)
 - [10ium_trojan_iran.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/10ium_trojan_iran.txt)
 - [10ium_vmess_iran.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/10ium_vmess_iran.txt)
