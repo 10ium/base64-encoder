@@ -36,6 +36,7 @@ https://raw.githubusercontent.com/ndsphonemy/proxy-sub/refs/heads/main/my.txt
 https://raw.githubusercontent.com/ndsphonemy/proxy-sub/refs/heads/main/lt-sub.txt
 https://raw.githubusercontent.com/ndsphonemy/proxy-sub/refs/heads/main/hys-tuic.txt
 https://raw.githubusercontent.com/ndsphonemy/proxy-sub/refs/heads/main/default.txt
+https://raw.githubusercontent.com/ndsphonemy/proxy-sub/refs/heads/main/tmp3.txt
 https://raw.githubusercontent.com/peasoft/NoMoreWalls/refs/heads/master/list_raw.txt
 https://raw.githubusercontent.com/rb360full/V2Ray-Configs/refs/heads/main/Reza-2
 https://raw.githubusercontent.com/rb360full/V2Ray-Configs/refs/heads/main/Reza-Collection
@@ -65,3 +66,12 @@ https://raw.githubusercontent.com/Mosifree/-FREE2CONFIG/refs/heads/main/Vmess
 https://drive.google.com/uc?export=download&id=10DzWaY72cBTD0ygQrnI0bulEtiUqyevGTelegram || @DarkVPNpro1.txt
 https://drive.google.com/uc?export=download&id=1V9DuDgkDGzQRHO_qWwMkS_KNSJM6UbnJ || @DarkVPNpro2.txt
 https://raw.githubusercontent.com/amirparsaxs/Javid-shah/refs/heads/main/Sub.text || amirparsaxs@xsfilternet.txt
+https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/refs/heads/master/all
+https://raw.githubusercontent.com/Ennzo0/V2ray/refs/heads/main/all.txt
+https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/clashmeta.txt
+https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/ndnode.txt
+https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/nodefree.txt
+https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/nodev2ray.txt
+https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/v2rayshare.txt
+https://raw.githubusercontent.com/AzadNetCH/temp/refs/heads/main/KR.txt
+https://raw.githubusercontent.com/Ashkan-m/v2ray/refs/heads/main/Sub.txt
