@@ -1,3 +1,4 @@
+https://raw.githubusercontent.com/10ium/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs.txt
 https://raw.githubusercontent.com/10ium/V2rayCollectorLite/main/vmess_iran.txt
 https://raw.githubusercontent.com/10ium/V2rayCollectorLite/main/ss_iran.txt
 https://raw.githubusercontent.com/10ium/V2rayCollectorLite/main/trojan_iran.txt
