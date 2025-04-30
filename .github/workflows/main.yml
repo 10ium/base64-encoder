@@ -77,7 +77,7 @@ jobs:
                   os.remove(os.path.join('encoded', existing))
 
           # آپدیت README
-          readme_header = '## لینک اشتراک ساب‌های تبدیل شده\n'
+          readme_header = '## لینک ساب‌های تبدیل شده به بیس 64\n'
           repo_owner = os.getenv('GITHUB_ACTOR')
           repo_name = os.getenv('GITHUB_REPOSITORY').split('/')[1]
 
