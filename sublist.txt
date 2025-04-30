@@ -2,6 +2,13 @@ https://raw.githubusercontent.com/10ium/multi-proxy-config-fetcher/refs/heads/ma
 https://raw.githubusercontent.com/10ium/V2rayCollectorLite/main/vmess_iran.txt
 https://raw.githubusercontent.com/10ium/V2rayCollectorLite/main/ss_iran.txt
 https://raw.githubusercontent.com/10ium/V2rayCollectorLite/main/trojan_iran.txt
+https://raw.githubusercontent.com/10ium/V2rayCollectorLite/main/vless_iran.txt
+https://raw.githubusercontent.com/10ium/V2rayCollectorLite/main/mixed_iran.txt
+https://raw.githubusercontent.com/10ium/V2rayCollector/main/vmess_iran.txt || 10ium-V2rayCollector-vmess
+https://raw.githubusercontent.com/10ium/V2rayCollector/main/ss_iran.txt || 10ium-V2rayCollector-ss
+https://raw.githubusercontent.com/10ium/V2rayCollector/main/trojan_iran.txt || 10ium-V2rayCollector-trojan
+https://raw.githubusercontent.com/10ium/V2rayCollector/main/vless_iran.txt || 10ium-V2rayCollector-vless
+https://raw.githubusercontent.com/10ium/V2rayCollector/main/mixed_iran.txt || 10ium-V2rayCollector-mixed
 https://ivuxy.tech/v.txt || ivuxy.tech.txt
 https://raw.githubusercontent.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs/refs/heads/main/sub/Turkey/config.txt
 https://raw.githubusercontent.com/Everyday-VPN/Everyday-VPN/refs/heads/main/subscription/main.txt
