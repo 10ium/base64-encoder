@@ -1,4 +1,4 @@
-## لینک اشتراک ساب‌های تبدیل شده
+## لینک ساب‌های تبدیل شده به بیس 64
 - [10ium-V2rayCollector-mixed.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/10ium-V2rayCollector-mixed.txt)
 - [10ium-V2rayCollector-ss.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/10ium-V2rayCollector-ss.txt)
 - [10ium-V2rayCollector-trojan.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/10ium-V2rayCollector-trojan.txt)
