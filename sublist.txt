@@ -9,6 +9,7 @@ https://raw.githubusercontent.com/10ium/V2rayCollector/main/ss_iran.txt || 10ium
 https://raw.githubusercontent.com/10ium/V2rayCollector/main/trojan_iran.txt || 10ium-V2rayCollector-trojan
 https://raw.githubusercontent.com/10ium/V2rayCollector/main/vless_iran.txt || 10ium-V2rayCollector-vless
 https://raw.githubusercontent.com/10ium/V2rayCollector/main/mixed_iran.txt || 10ium-V2rayCollector-mixed
+https://github.com/10ium/ScrapeAndCategorize/blob/main/output_configs%2FTurkey.txt || 10ium-ScrapeAndCategorizeTurkey.txt
 https://ivuxy.tech/v.txt || ivuxy.tech.txt
 https://raw.githubusercontent.com/Epodonios/bulk-xray-v2ray-vless-vmess-...-configs/refs/heads/main/sub/Turkey/config.txt
 https://raw.githubusercontent.com/Everyday-VPN/Everyday-VPN/refs/heads/main/subscription/main.txt
@@ -82,4 +83,3 @@ https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/nodev
 https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/v2rayshare.txt
 https://raw.githubusercontent.com/AzadNetCH/temp/refs/heads/main/KR.txt
 https://raw.githubusercontent.com/Ashkan-m/v2ray/refs/heads/main/Sub.txt
-https://github.com/10ium/ScrapeAndCategorize/blob/main/output_configs%2FTurkey.txt
