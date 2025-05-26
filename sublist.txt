@@ -82,3 +82,4 @@ https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/nodev
 https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/main/nodes/v2rayshare.txt
 https://raw.githubusercontent.com/AzadNetCH/temp/refs/heads/main/KR.txt
 https://raw.githubusercontent.com/Ashkan-m/v2ray/refs/heads/main/Sub.txt
+https://github.com/10ium/ScrapeAndCategorize/blob/main/output_configs%2FTurkey.txt
