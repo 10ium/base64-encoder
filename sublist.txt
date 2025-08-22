@@ -1,6 +1,7 @@
 https://drive.google.com/uc?export=download&id=10DzWaY72cBTD0ygQrnI0bulEtiUqyevGTelegram || @DarkVPNpro1.txt
 https://drive.google.com/uc?export=download&id=1V9DuDgkDGzQRHO_qWwMkS_KNSJM6UbnJ || @DarkVPNpro2.txt
 https://ivuxy.tech/v.txt || ivuxy.tech.txt
+https://raw.githubusercontent.com/darkvpnapp/CloudflarePlus/refs/heads/main/proxy || darkvpnapp_CloudflarePlus_proxy
 https://karing-freevpnhomes-subscription.shampoosirsehat.homes || freevpnhomes.txt
 https://raw.githubusercontent.com/10ium/ScrapeAndCategorize/refs/heads/main/output_configs/Turkey.txt || 10ium-ScrapeAndCategorizeTurkey.txt
 https://raw.githubusercontent.com/10ium/V2rayCollector/main/mixed_iran.txt || 10ium-V2rayCollector-mixed
