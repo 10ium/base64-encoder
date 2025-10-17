@@ -26,6 +26,7 @@
 - [Ennzo0_all.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/Ennzo0_all.txt)
 - [Epodonios_config.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/Epodonios_config.txt)
 - [Everyday-VPN_main.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/Everyday-VPN_main.txt)
+- [Farid-Karimi_Config-Collector.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/Farid-Karimi_Config-Collector.txt)
 - [Freedom-Guard_Finder_configs.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/Freedom-Guard_Finder_configs.txt)
 - [Mahdi0024_ProxyCollector.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/Mahdi0024_ProxyCollector.txt)
 - [MahsaNetConfigTopic.txt](https://raw.githubusercontent.com/10ium/base64-encoder/main/encoded/MahsaNetConfigTopic.txt)
